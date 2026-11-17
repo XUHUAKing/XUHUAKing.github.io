@@ -310,3 +310,33 @@ p.tldr {
 }
 :root, [data-theme="light"] { --tldr-bg: rgba(227, 154, 69, .08); }
 [data-theme="dark"] { --tldr-bg: rgba(224, 147, 73, .10); }
+
+/* ---------- Experience: equal spacing between rows ---------- */
+/* Every row gets the same padding and every logo fits the same box,
+   so the gap between entries no longer depends on each logo's shape. */
+.exp-table td {
+  padding: 16px 0 !important;
+  vertical-align: middle !important;
+}
+.exp-table td:first-child {
+  width: 25%;
+  padding-right: 24px !important;
+  text-align: center;
+}
+.exp-table td:last-child { padding-right: 16px !important; }
+.exp-table td:first-child img {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  max-width: 140px;
+  max-height: 90px;
+  object-fit: contain;
+}
+.exp-table td:last-child p { margin: 6px 0; }
+
+@media (max-width: 640px) {
+  .exp-table td:first-child { padding: 18px 16px 6px !important; }
+  .exp-table td:first-child img { margin: 0; }
+  .exp-table td:last-child { padding: 0 16px 14px !important; }
+}
